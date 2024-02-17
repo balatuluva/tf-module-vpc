@@ -9,5 +9,5 @@ resource "aws_subnet" "main" {
 resource "aws_route_table" "main" {
   count = length(var.cidr_block)
   vpc_id = var.vpc_id
-  tags = merge(var.tags, { Name = "${var.env}-${var.name}-rt-${count.index+1}" }
+  tags = merge(var.tags, { Name = "${var.env}-${var.name}-rt-${count.index+1}" })
 }
